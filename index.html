@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Quarterly Earnings Report - RevealJS</title>
+
+    <!-- Mobile-friendly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- RevealJS core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/reveal.css" />
+
+    <!-- RevealJS theme (you can change 'black' to 'white', 'league', 'moon', etc.) -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/dist/theme/black.css" id="theme" />
+
+    <!-- Code syntax highlighting theme -->
+    <link rel="stylesheet" href="https://unpkg.com/reveal.js@4/plugin/highlight/monokai.css" />
+
+    <style>
+      /* Simple custom styling */
+      .subtitle {
+        font-size: 0.8em;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <!-- SLIDE 1: Title slide with your email -->
+        <section>
+          <h1>Quarterly Earnings Report</h1>
+          <h3 class="subtitle">Interactive RevealJS Presentation</h3>
+          <p>Prepared by: <strong>23f3004096@ds.study.iitm.ac.in</strong></p>
+
+          <!-- Speaker notes for this slide -->
+          <aside class="notes">
+            Welcome everyone. This is our interactive quarterly earnings report built using RevealJS.
+            I will walk you through financial highlights, a code-based analysis, and key metrics.
+          </aside>
+        </section>
+
+        <!-- SLIDE 2: Markdown-based slide -->
+        <!-- This entire slide is written in Markdown -->
+        <section data-markdown>
+          <textarea data-template>
+## Agenda (Markdown Slide)
+
+1. **Overview of Results**
+2. Revenue & Profit Trends
+3. Key Financial Ratios
+4. Technical Analysis Snippet (Code)
+5. Summary & Next Steps
+
+---
+
+### Stakeholders
+
+- Executive Management  
+- Data Science & Analytics Team  
+- Investors & External Analysts  
+
+*This slide is fully written in Markdown.*
+          </textarea>
+
+          <aside class="notes">
+            Explain that this slide demonstrates RevealJS Markdown support.
+            Briefly walk through the agenda and the target audience.
+          </aside>
+        </section>
+
+        <!-- SLIDE 3: Fragments (animated elements) -->
+        <section>
+          <h2>Key Financial Highlights</h2>
+          <ul>
+            <li class="fragment">📈 Revenue growth: <strong>12% YoY</strong></li>
+            <li class="fragment">💰 Net profit margin: <strong>18%</strong></li>
+            <li class="fragment">📊 EPS (Earnings Per Share): <strong>₹ 22.5</strong></li>
+            <li class="fragment">📉 Operating expenses reduced by <strong>5%</strong></li>
+          </ul>
+
+          <aside class="notes">
+            Use the fragmented bullet points to build suspense.
+            Reveal each item one by one, providing commentary and context for each metric.
+          </aside>
+        </section>
+
+        <!-- SLIDE 4: Code sample with syntax highlighting -->
+        <section>
+          <h2>Code Sample: Calculating Quarterly Growth</h2>
+
+          <pre><code class="language-python">
+import pandas as pd
+
+# Quarterly revenue data (in crores)
+data = {
+    "quarter": ["Q1", "Q2", "Q3", "Q4"],
+    "revenue": [120.5, 135.2, 150.8, 160.3]
+}
+
+df = pd.DataFrame(data)
+
+# Compute quarter-over-quarter growth (%)
+df["qoq_growth_percent"] = df["revenue"].pct_change() * 100
+
+print(df)
+          </code></pre>
+
+          <aside class="notes">
+            This Python snippet shows how a data scientist might compute
+            quarter-over-quarter revenue growth using pandas.
+            Emphasize how code is integrated directly into the presentation.
+          </aside>
+        </section>
+
+        <!-- SLIDE 5: Mathematical equation (financial formula) -->
+        <section data-markdown>
+          <textarea data-template>
+## Financial Formula: Discounted Cash Flow (DCF)
+
+We can estimate the **Present Value (PV)** of future cash flows using:
+
+\[
+PV = \sum_{t=1}^{T} \frac{CF_t}{(1 + r)^t}
+\]
+
+Where:
+
+- \( CF_t \) = cash flow at time \( t \)  
+- \( r \) = discount rate  
+- \( T \) = total number of periods  
+
+This helps us estimate the fair value of future earnings today.
+          </textarea>
+
+          <aside class="notes">
+            Explain the discounted cash flow formula.
+            Connect this formula to how analysts value the company based on future earnings.
+          </aside>
+        </section>
+
+        <!-- SLIDE 6: Closing / Summary -->
+        <section>
+          <h2>Summary & Next Steps</h2>
+          <ul>
+            <li class="fragment">Strong revenue and profit growth this quarter</li>
+            <li class="fragment">Operational efficiency has improved</li>
+            <li class="fragment">Future projections look positive under current market assumptions</li>
+          </ul>
+
+          <p class="fragment">
+            Questions? Reach out at <strong>23f3004096@ds.study.iitm.ac.in</strong>
+          </p>
+
+          <aside class="notes">
+            Conclude the presentation by emphasizing the positive trends,
+            but also mention any potential risks or assumptions if relevant.
+            Invite questions from stakeholders.
+          </aside>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- RevealJS core JS -->
+    <script src="https://unpkg.com/reveal.js@4/dist/reveal.js"></script>
+
+    <!-- Plugins: Markdown, Highlight, Notes, Math -->
+    <script src="https://unpkg.com/reveal.js@4/plugin/markdown/markdown.js"></script>
+    <script src="https://unpkg.com/reveal.js@4/plugin/highlight/highlight.js"></script>
+    <script src="https://unpkg.com/reveal.js@4/plugin/notes/notes.js"></script>
+    <script src="https://unpkg.com/reveal.js@4/plugin/math/math.js"></script>
+
+    <!-- MathJax for rendering LaTeX equations -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_HTML-full"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,  // enable direct links to each slide
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealNotes,
+          RevealMath.MathJax2
+        ]
+      });
+    </script>
+  </body>
+</html>
